@@ -1,0 +1,225 @@
+💉️(violence will send str8 2 bed {theyre testing the limits;but its 2 l8 4that -> @}) RIP = covid.  💉️
+🍊️🍪️🧀️
+🦑️🗄️💾️
+  🗺️FS2txt.LEGEND has disk[0000] legend
+  
+  
+  📅️📅️📅️📅️📅️📅️📅️📅️
+  📮️👩🏻‍🏭️ur gonna wanna look at this 
+  0.inode.maqr[🧠️🎫️]0000.c
+  Std_inc_block_count_H(blockfilename_Array_H[0]); // both are created
+Std_inc_inode_count_H(blockfilename_Array_H[0]); //⁉️ is this actually doing wut we think? clear(er) view of inode/sb legend or w/e 
+💌️✅️✅️✅️✅️✅️✅️✅️
+block_count = total block count = 8+
+iblox_count = count of "selected/1rst" inode = 1+
+🏓️
+(so its exactly wut it should be 
+1; we will make a diff total inode counter
+(and preferably right shift those current ones <3{it reads superblok <3 }
+💌️✅️✅️✅️✅️✅️✅️✅️
+👩🏻‍🏭️
+    📮️
+  
+  👩🏻‍🏭️i think u can just change 2 "Std_read_iblox_count_H for now"
+  👩🏻‍🏭️(later u should probably have 2 specify inode number instead of superbloc
+  👩🏻‍🏭️(since superbloc should be obvious #tho putting inode# cant hurt
+  👩🏻‍🏭️(anyways this is our focus now, then things will be easier. 💖️
+      //🔖️
+    int inodeCountDubious = Std_read_inode_count_H(std_superBLockFilename_H);
+    //is it inode count or just iblock count? {now maybe time 2 clarify fx names+}
+    // not sure cuz i didn't load more than 1 inode but i can.
+    printf("inodeCountDubious = %d\n", inodeCountDubious);
+    //📮️it is indeed showing "block count for 1rst inode and not "INODE COUNT"
+    //📮️📌️NOW! would be the time 2 fix that / nip in bud 🌹️no choice.
+  📄️
+❌️✅️
+2.qi.lngn]🖌️🦾️]0000.c✅️{fix is ez , just minus -1}
+^.H.orn-uniHeader[🦄️]0006.c✅️{un minus 1}
+
+0.inode.maqr[🧠️🎫️]0000.c✅️💔️{is using 2 make inode. is that bad!?}
+💔️2bh i dont think its used at all...💔️
+❤️‍🩹️❤️‍🩹️
+❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️❌️
+0.fsmaqr]💾️🗄️.c❌️
+0.sb.maqr[🦸‍♂️️🎫️]0001.c❌️
+1.kb2.fs]⌨️🗃️]0000.c❌️
+2.convert.bases[⚙️☯️]0000.c❌️
+2.load.asc.iinkez[⚙️☯️]0000.c❌️
+📄️
+  📅️📅️📅️📅️📅️📅️📅️📅️
+   📆️4.28.24}
+  🔼️wussup? 🔼️
+  🗨️u wanna compare these 2 files and figure out what were doing;
+  2.load.asc.iinkez[⚙️☯️]0000.c 
+2.qi.lngn]🖌️🦾️]0000.c 
+💬️
+0.no magic, 🪄️ no inode is made till u do a proc or otherwise 
+1.int newInodeCt = Std_register_block_Inode(local_proDirString_0); //®️🦄️ 
+curious about this , wuts it doing ?(2.load.asc.iinkez[⚙️☯️]0000)
+🦄️{header fx() also use this 4 inodect? is it iblox or need change?, its obviously iblox count.. u can skip it but its confusing...}
+
+⚠️Std_register_block_Inode{this is actually really ugly code due 2 misunderstanding of 8-10 bloxVSiblox...(it subs 2 ) fix this whenever preferbly now? also u can skip it...}🏥️at least its docsd#FOUND💉️🏥️
+🐛️just fix/replace it . its the only bug. but it spreads 2 far nip it🌹️🐛️j
+⚠️
+2.
+💬️
+  🗨️
+
+
+   🔼️ 🔼️ 🔼️ 🔼️ 🔼️ 🔼️ 🔼️
+  📆️4.24.24}
+  🔑️was ez.
+  global_ezPos_Iwise = fullSum; //key 2 getting read from pos ! 🔑️
+  🍍️wut needs be done now?  read and render from proper position. y is it not but was b4 !?  ) 🍍️
+  👨🏽‍🚀️Std_read_inode_count_H = Std_read_inode_count_H() - 1 . dumb. but will fix after full thru . will be ezr <3
+  👨🏽‍🚀️
+  🦾️i node incs prematurely in 2.qi."
+  
+  should be ez fix knowing that... 🦾️
+   📆️4.23.24}
+   have debug.txt 💌️
+   
+   👁️‍🗨️️ STD_writeToInodes_H() 👁️‍🗨️️📌️
+   
+   🤷‍♀️️debug is in place. (u may need extra debug cuz full sum equation is obviously bad. also ascii isn't interating, so id like 2 know 🖨️asciiChar and 🖨️dropcount
+ 😸️ cat x.x_debug_out.txt 
+ 
+ 
+
+  🤷‍♀️️
+  
+  📮️🗣️this says EVERYTHING already {notice the file corruption as well...it goes back but , weird...}
+  {i count was right... so how did they get that full sum??}🗣️
+  
+  cat x.x_debug_out.txt 
+iCount = 0  
+local_AsciiBuffer_1 = 0000000001110111  
+fullSum = 0  
+stdBlockBuffer_1 = 00000000011101110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001/0
+!�  
+iCount = 1  
+local_AsciiBuffer_1 = 0000000000111111  
+fullSum = -240  
+stdBlockBuffer_1 = 0000000001110111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000  
+
+👩🏻‍🏭️🤷️should be...(from 2.load)🤷️
+iCount = 0  
+local_AsciiBuffer_1 = 0000000000111111  
+fullSum = 0  
+stdBlockBuffer_1 = 0000000000111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000  
+iCount = 1  
+local_AsciiBuffer_1 = 0000000001110111  
+fullSum = 16  
+stdBlockBuffer_1 = 0000000000111111000000000111011100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000  
+
+🤔️must be something else? inode count?
+otherwise,if all data that enters is the same... (cant be)🤔️📮️was inode ct. ... should be ez fix...
+❣️u have 2 recompile 2.load each time header changes.. u may wanna just compile "everytihng" with script..❣️
+📮️
+global_inode_ct = 1  
+iCount = 0  
+local_AsciiBuffer_1 = 0000000001110111  
+fullSum = 0  
+stdBlockBuffer_1 = 0000000001110111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+lobal_inode_ct = 2  
+iCount = 1  
+local_AsciiBuffer_1 = 0000000000111111  
+fullSum = -240  
+stdBlockBuffer_1 = 0000000001110111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000  
+👩🏻‍🏭️
+📮️
+
+  📆️4.15.24}
+  
+  1.just replacing the old in quilo with this new one
+  2.can it load "INTO quilo?" GOAL...
+
+📆️4.13.24}
+no longer crashes , but is making new inode instead of storing , imo. 
+(was 2 diff problems , ez fix tbh, lets go)
+📮️seems like its actually writing after the "buffers limits" 
+instead of moving 2 front of new inode...
+(can we exit after inode is made or w/e first💡️ ;) ? 
+ 📮️
+📆️4.12.24 (16.15)=🏚️i dont get the top malloc error anymore. 
+maybe cuz i have been allocating and freeing memory . maybe it will return but for now
+i think everything is fine BUT
+✍️its writing out data in the wrong place (not the inodes block , just in main/dir ✍️
+obv thats all my fault somehow ; its not magic ✍️
+
+📆️4.12.24 =🤓️i dont even think its the "system(exes)" cuz they've neever been a problem 
+so it may not be that bad :/ (u could probably diagnose by swapping one of hte earlier mallocs and leaveing the later one ;) (>as opposed 2 using "GDB/GHIDRA LMFAO") ;
+ps dont use that "all free()" thats just a distraction and its gone <3z🔍️🤓️
+👨🏾‍🏫️if worse comes 2 worse, just dont use malloc. evertime i replace malloc with 
+# the code works till next malloc. (or go backwards and see which "corrupted"
+ w/e its not magic👨🏾‍🏫️
+ 📦️i wanted 2 allocate in a seperate function like i did for the 
+ "program files(they never corrupted...)
+ i think its header mallocs that "keep using or w/e same "memory /namespace"
+ make it corrupt ez. i dont think we actually ran into this b4 therefore and its a 
+ new problem. 
+ but it doesn't explain why inodes worked at some point(not provable!<but not anymore...)🏚️w/e they will work after this, they obv werent gonna work ....🏠️ 📦️
+ 
+ ❗️Heap corruption in C
+Stack Overflow
+https://stackoverflow.com › questions › heap-corruptio...
+Oct 13, 2010 — You've allocated too small a block, and then written more bytes to it than you've allocated, which overwrites bookkeeping information next to ...
+
+
+https://stackoverflow.com/questions/3923290/heap-corruption-in-c
+ ❗️
+
+*going 2bed find = (ninja)
+ printf("🥷️in if!?!=  📌️ 📌️\n");  
+📆️4.12.24 =
+malloc(): corrupted top size
+nothing works (never has!?
+
+STD_txtFS_SB_fieldlength_bin_H ?
+
+system("./+x/0.pro.maqr+[🎫️]0001.+x"); < in header? 
+🦄️
+LOCKING UP HERE (IN .H)
+in task(Std_register_block_Inode)🧟️➕️➕️
+  
+  📆️4.11.24+ = "first inode is loading/printing perfect now." i ahven't gone past that...
+  📅️4.11.24=
+ ⚙️buffer is good 2 go but im not sure that inodes were setup right or something?  
+ 📮️i nodes are fine and data wrote 2 file but file is corrupt... why?
+ 010\00\00 < this is writing at end of smoll buffer. 
+  📅️4.10.24=
+>VEry OLD comments , can be distracting. ..
+
+🍍️makes inode and first block is corrupt with ' �]��]��]��]��] '
+w/e lets printf(dump) b4 it dumps2.txt,  and we'll see wuts happening.
+📮️its going 2 file malformed. should be ez fix📮️
+🚑️incredible violence . rest=nap=RIP?, rather do work with less stress
+than go bad thru stress and be bad still... 🚑️
+🍍️
+📅️3.31.24= 🦔️
+
+everything will come in , convert 2 binary , at be in inode.]
+(inode will pass 2 load from [arg]later can make "ux")
+🏗️
+(its gonna be ascii , but if u can eventually steal "unicode/hex"
+from xxd, great, same mechanism theoretically . so ... ASCII 1rst
+
+⚙️ there was no mech for loading in asci [EVER]. 
+>so, im gonna build it from scratch taking peices from 🦾️
+only if we need them⚙️
+🏗️
+  📅️
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+

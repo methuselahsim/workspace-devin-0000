@@ -1,0 +1,142 @@
+📝️
+🗺️TXTFS]LGND🗺️
+🗾️{CURRENT STATE}🗾️
+
+0.fsmaqr]💾️🗄️.c > {
+system("./+x/0.sb.maqr[🦸‍♂️️🎫️]0001.+x") ;
+system("./+x/0.pro.maqr+[🎫️]0001.+x") *4 + 1 ;
+0.SB - > made first (seperately , duh🥴️ ^)
+1.001
+2.010
+3.011
+4.100 		<leaving these blank cuz why not. w/e >
+		<logic shouldn't use "pos" just offset ref...>
+5.101 = +1]this IS KBD BUFFER AND COUNTER ⌨️🧊️
+		//👩🏻‍🏫️pro-maid from here V//📛️
+110-]THIS IS THE INODE [*for 2.load | 2.qi ]
+
+111]-FIRST  INODE BLOC [*cp]
+1000]2ND INODE BLOC	[*cp]
+______________________
+}
+
+🗾️
+🗽️{IDEAL STATE}🗽️
+📛️
+//👩🏻‍🏫️pro-maid from here V//📛️
+110-]THIS IS THE 1rst INODE (it points 2 dir[0000]?
+111]-FIRST  INODE BLOC {IS A DIR } [any others will probably be "FRAGMENTED"]
+{wut goes in here? "DIR]0000" = filename|/.txt!
+1000]2ND INODE BLOC ...w8 wut? 😵‍💫️🌀️
+🗣️https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout#Hash_Tree_Directories🗣️
+ Inline Directories
+
+The first four bytes of i_block are the inode number of the parent directory. Following that is a 56-byte space for an array of directory entries;
+🗣️
+
+❌️erase this draft]0002❌️
+🚧️🚧️🚧️🚧️🚧️🚧️🚧️🚧️🚧️🚧️
+⛔️ < should be created by "mkfs🗃️.c"
+110-]THIS IS THE INODE 
+holds disk]0000 (but that is it? w/e u want
+{no , should also hold pointers 2 "all things?/just dirs?"see=✳️}
+111]-FIRST  databloc [is a dir]name of disk]0000 ? (if u want?)
+
+⛔️
+1000]2ND INODE BLOC [would be a proc's inode. then would have 1 
+dir saying name of proc, this points 2 1001 as dir, plus all files
+created for this proc...] {1rst proc inode...}
+1001] name of first proc (or loaded file w/e)
+1002]first data bloc for first proc
+1003]{2nd data bloc (!for inode0)  if new proc / dir is made for "disk]0000"?✳️yes....(all procs/dirs have inode so...this doesn't
+track the blox of the new inodes (new inodes do that , but
+🧩️i think it acts as a "SUPER TRACK 4 ALL INODES ...)
+anyways we will treat it like that seems like the final thing 2 code 
+or w/e anyways and it may just fit after all else is done...🧩️
+🚧️🚧️🚧️🚧️🚧️🚧️🚧️🚧️🚧️🚧️
+💭️is this mirroring Diagram?💭️
+
+📁️EXAMPLE : {256bit block size}
+🤓️"should probably be 16-64..."[0x0]
+0x0 	__le32 	inode 	Number of the inode that this directory entry points to.
+🤓️"in bits or blox?"[0d16]
+0x4 	__le16 	rec_len 	Length of this directory entry. Must be a multiple of 4.
+🤓️"fair enuff...🤓️[0d32(16)]
+0x6 	__le16 	name_len 	Length of the file name.
+🤓️"fair enuff...🤓️[0d48(16)]
+0x+	__le16 	filetype (mt 4 now w/e)
+🤓️"file name bumped 4 filetype space🤓️[0d64(16)]= 192 (more than enuff)
+0x8 	char 	name[EXT4_NAME_LEN] 	File name. 
+🌳️we can always shorten "file name size " i would just not accept 
+more than "64 bits" then we can always add more stuff 4 header <3 🌳️
+❌️
+❌️erase this draft]0001❌️
+0110-]INODE-?
+0111]
+1000]
+❌️
+❎️X-INFO❎️
+🌐️ https://cscie28.dce.harvard.edu/lectures/lect04/6_Extras/ext2-struct.html#INODE-TABLE 🌐️
+2.3. Directories
+ 	
+
+This definition comes from the Linux Kernel Documentation with some minor alterations.
+
+A directory is a filesystem object and has an inode just like a file. It is a specially formatted file containing records which associate each name with an inode number. Later revisions of the filesystem also encode the type of the object (file, directory, symlink, device, fifo, socket) to avoid the need to check the inode itself for this information
+
+The inode allocation code should try to assign inodes which are in the same block group as the directory in which they are first created.
+
+The original Ext2 revision used singly-linked list to store the filenames in the directory; newer revisions are able to use hashes and binary trees.
+
+Also note that as directory grows additional blocks are assigned to store the additional file records. When filenames are removed, some implementations do not free these additional blocks. 
+🗽️
+🗺️
+📝️
+🆕️🆕️🆕️🆕️🆕️🆕️🆕️🆕️
+{this is basically a "copy fx()"}
+also: wont it be nice 2 place "disk]0000" inside of 
+"user]0000/proc" or something or treat it as mounted w/e 
+
+(and have files render on save / deletion copy
+
+(also were is this on linux (mounted part? ) itsnot that simple remember?
+(its always gonna be invisible till its not...)
+🆕️🆕️🆕️🆕️🆕️🆕️🆕️🆕️🆕️🆕️
+📄️
+✏️
+inode = Superparent  = holding dir&*->disk]0000
+directory = superDir = "disk]0000">filename
+
+*also inode were supposed 2 be storing their
+child blox *-> 's; ez 2 add, but yea...
+✏️
+📄️
+📄️✏️✏️📄️
+
+📝️
+
+🔬️
+https://unix.stackexchange.com/questions/387319/how-come-that-inodes-of-directories-store-filenames-in-ext4-filesystem
+
+
+🔑️
+A directory's data contains dirent entries. Each directory entry contains a filename and a pointer to an inode. An ext4 inode can contain the data contents of a small file for efficiency, so that it doesn't have to perform yet another block read.
+
+The value of "small" can be 60 bytes with file attributes, or up to 160 bytes if extended file attributes aren't being used.
+🔑️
+
+https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout#Hash_Tree_Directories
+
+ Inline Directories
+
+The first four bytes of i_block are the inode number of the parent directory. Following that is a 56-byte space for an array of directory entries; see struct ext4_dir_entry. If there is a "system.data" attribute in the inode body, the EA value is an array of struct ext4_dir_entry as well. Note that for inline directories, the i_block and EA space are treated as separate dirent blocks; directory entries cannot span the two. 
+📝️
+🧸️🗑️{NOTHING}🗑️
+were gonna be deleting a lot of procs... they can be stored in 
+blockchain history... 
+
+but i think u wanna pay attention 2 the "ADVANCED" deletion strategies
+deventually
+🗑️
+🧸️
+
