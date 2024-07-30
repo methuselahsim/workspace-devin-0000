@@ -1,0 +1,256 @@
+
+🏁️🏇️were not STARTING from "NOTHING"
+ were FINISHING with "EVERYTHING"🛫️🛰️
+🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️
+ how does a decoder only transformer know what words from the corpus/ vocab to pick for output in response to query ? at what step does that happen? 
+
+
+-1.tokenizer < 
+0.indexer <
+1.Embeddings <
+	2.PE <
+	3.Concat(+) 
+4.MHA -Masked 
+	5.Add&Norm 
+	4.MHA 
+	5.Add&Norm 
+	6.FeedForward 
+	5.Add&Norm
+7.Linear
+8.Softmax 
++9.output_probabilities_picker
+🗺️
+🗺️
+-1.tokenizer < 
+0.indexer <
+1.Embeddings < -i vocab.txt -o e.embs
+	2.PE < -i vocab.txt -o e.pe
+	3.Concat(+) <
+4.MHA -Masked <  
+	5.Add&Norm < 
+	4.MHA < 
+	5.Add&Norm < 
+	6.FeedForward 
+	5.Add&Norm
+7.Linear
+8.Softmax 
++9.output probabilities picker -o answer
+🗺️
+🤩️vocab != corpus tbh , everything in your corpus is PROBABLY in a "DICTIONARY.txt" (out of vocab words)? theres a way 2 handle but this is all "PRE TX" u may wann do this after; itll be ok, its more of a mod tbh <3🤩️ 
+
+^.(llama2.c never reuses code "ie Matmult in header etc")
+---u know that makes it ezier 2 debug etc, right? 🦄️
+-1.tokenizer << i may make later , not part of diagram
+0.indexer << not called for but useful for decoding 
+> -i vocab -o index
+---------------------------ENCODER
+1.Embeddings < -i vocab.txt -o e.embs
+2.PE < -i vocab.txt -o e.pe
+3.Concat(+)
+4.MHA  (make masked optional if flag is set)
+5.Add&Norm
+6.FeedForward 
+	5.Add&Norm
+
+---------------------------DECODER
+	1.Embeddings < -i vocab.txt -o e.embs
+	2.PE < -i vocab.txt -o e.pe
+	3.Concat(+)
+4.MASKED-MHA (use same code as MHA but add flag 
+	5.Add&Norm
+	4.MHA 
+	5.Add&Norm
+	6.FeedForward 
+	5.Add&Norm
+7.Linear
+8.Softmax 
++9.output probabilities picker -o answer
+--------------------------EPOCHS
+1.D - 9.D - <!>
+
+⁉️(because it was only 1 word (in answer) there wasn't much 
+ to compare 2 . do we put the old WITH the NEW instead?
+ 👩🏻‍🔬️we can try that, and maybe should, 👩🏻‍🔬️
+ but the old code is so jacked and gerry rigged, 
+ that its probably faster 2 move on 2 n ew🏎️ 
+🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️
+🏁️it could even happen that i make this BINARY one day
+(ez compared 2 this tbh), etc w/e
+⭐️i bet therese EVEN  "MACRO CORPUS CLASSIFICATION" we can do etc, so we know if we need 2 go into certaain/every corpus
+2 get the answer etc . so , yea...(u score "each corpus" , as if it was a word/char 2 know if u shoul deven go into it
+AND THATS `what im callin` "MICRO-ML"(opposite of META/MACRO-ML), u may wanna extract this inisght, cuz were
+probably gonna do that 🤯️ A L O T 🤯️ 
+(and use rl weights , instead of digging thru text each time ;) 
+, and as we learn ml we'll have other arch insights <3💝️ ⭐️
+🏁️
+📮️
+(its good 2 do these by diagram cuz u learn SPECIFICS)+
+we can use this one "FOREVER" & with "OTHER ARCHS ;)"
+it should be so EZ it could be used 2 "TEACH" ie : KISS
+(u should beable 2 use old code as a "code bank" 2 inform new
+📮️
+🎺️
+
+👩🏻‍🦯️
+last "tx arch" ew made, we made IN THE DARK cuz we HAD to
+
+i literally beleive we can get done 🏎️ FASTER ,🏎️ 🏎️ 🏎️ 🏎️ 🏎️ 🏎️
+if we basically start over, using our learnings
+i aint coding this after all, OLL is.. 
+and if ew just follow the "DIAGRAM OF TX this time then: 
+
+👩🏻‍🦯️
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️
+⁉️
+🗺️
+ how does a decoder only transformer know what words from the corpus/ vocab to pick for output in response to query ? at what step does that happen? 
+{i have it happening somewhere in step +9 , using index?}
+
+
+here is the architecture for my transformer llm chat application. 
+does it look right? 
+⬛️encoder_0⬛️
+0.indexer < -i corpus.txt -o index.txt 
+1.Embeddings < -i query.txt -o embeds_0.txt 
+	2.PE < -i query.txt -o pe_0.txt 
+	3.Concat(+) < -i embeds_0.txt pe_0.txt -o result_0.txt 
+4.MHA < -i result_0.txt -o mha_0.txt
+	5.Add&Norm < -i result_0.txt mha_0.txt -o a&n_0a.txt
+
+	6.FeedForward < -i a&n_0a.txt -o ff_0.txt
+	5.Add&Norm < -i ff_0.txt a&n_0a.txt -o a&n_0b.txt
+⬛️
+➰️decoder_0➰️
+1.Embeddings < -i query.txt -o embeds_1.txt 
+	2.PE < -i query.txt -o pe_1.txt 
+	3.Concat(+) < -i embeds_1.txt pe_1.txt -o result_1.txt 
+4.MHA -Masked  < -i result_1.txt -o mha_1a.txt
+	5.Add&Norm < -i result_1.txt mha_1a.txt -o a&n_1a.txt	
+	
+	4.MHA < -i a&n_0b.txt a&n_1.txt -o mha_2.txt  // is this the only time we have two different inputs or do we do this for answer generation as well, 
+	it might make sense..., in that case, thats where we would get
+	padding from ... 
+	5.Add&Norm < -i result_0.txt a&n_1b.txt -o a&n_1b.txt
+	
+	6.FeedForward < -i a&n_1b.txt -o ff_0.txt
+	5.Add&Norm < -i a&n_1b.txt ff_0.txt -o a&n_1c.txt
+	
+7.Linear < -i a&n_1c.txt -o ll.txt
+8.Softmax < -i ll.txt -o answer.txt 
+➰️
+➿️decoder_1➿️
+Do it all again with input "answer.txt" till "<!>" = 'end token'
+➿️
+🅰️🅰️🅰️🅰️🅰️🅰️🅰️
+ Transformer LLMArchitecture!
+
+I'll provide a high-level overview of your architecture, highlighting the key 
+components and potential issues.
+
+**Encoder**
+You have two encoders (`encoder_0` and `decoder_1`) with similar architectures. Each 
+consists of:
+
+1. **Indexer**: Indexes the input corpus.
+2. **Embeddings**: Embeds the query into a vector space.
+3. **PE (Positional Encoding)**: Adds positional encoding to the embedded query.
+4. **Concat (+)**: Concatenates the embedded query and its position encoding.
+5. **MHA (Multi-Head Attention)**: Performs self-attention over the concatenated input.
+6. **Add&Norm**: Applies additive attention and layer normalization.
+
+**Decoder**
+The decoder (`decoder_0` and `decoder_1`) has a similar architecture to the encoder, 
+with some differences:
+
+1. **Embeddings**: Embeds the query into a vector space (same as the encoder).
+2. **PE (Positional Encoding)**: Adds positional encoding to the embedded query.
+3. **Concat (+)**: Concatenates the embedded query and its position encoding.
+4. **MHA (Multi-Head Attention)**: Performs self-attention over the concatenated input,
+with masked attention for decoder inputs.
+
+**FeedForward**
+You have two FeedForward components (`FeedForward_0` and `FeedForward_1`) that process 
+the output of the Add&Norm layers.
+
+**Linear and Softmax**
+The final layer applies a linear transformation followed by a softmax activation 
+function to generate the probability distribution over the answer space.
+
+**Potential Issues**
+
+1. **Double-layered MHA**: In the decoder, you're performing masked attention twice 
+(lines 4 and 5). This might not be necessary; consider removing one of the layers.
+2. **Unnecessary FeedForward**: You have two FeedForward components (`FeedForward_0` 
+and `FeedForward_1`). Are both necessary? Could one be combined or removed?
+3. **Lack of padding handling**: When processing answers, you're concatenating the 
+input and answer embeddings (lines 4-5). This might lead to issues with padding. 
+Consider using a separate padding layer or handling padding explicitly in your 
+implementation.
+4. **Unspecified 'end token'**: You mention an 'end token' (`<!>`) as the termination 
+signal for the decoder. How are you handling this token? Is it properly handled 
+throughout the architecture?
+
+Overall, your architecture looks like a typical Transformer-based LLMArchitecture, with
+some minor variations and potential issues to consider.
+
+>>> Send a message (/? for help)
+
+🅰️🅰️🅰️
+🅰️🅰️🅰️
+🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️🅰️
+
+
+
+
+
+
+
+
+
+
+
+
+
++9.output_probabilities_picker < -i soft.txt -o answer.txt (first word) 
+🗺️
+
+🅰️
+🗺️
+ how does a decoder only transformer know what words from the corpus/ vocab to pick for output in response to query ? at what step does that happen? 
+{i have it happening somewhere in step +9 , using index?}
+
+0.indexer < -i corpus.txt -o index.txt 
+1.Embeddings < -i corpus.txt -o embeds_0.txt 
+	2.PE < -i corpus.txt -o pe_0.txt 
+	3.Concat(+) < -i embeds_0.txt pe_0.txt -o result_0.txt 
+4.MHA -Masked  < -i result_0.txt -o mha_0.txt
+	5.Add&Norm < i result_0.txt mha_0.txt -o a&n_0.txt
+	4.MHA 
+	5.Add&Norm 
+	6.FeedForward 
+	5.Add&Norm
+7.Linear
+8.Softmax 
+
+
+
++9.output
+🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️🦙️
